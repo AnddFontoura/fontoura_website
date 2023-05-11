@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\CityApiController;
+use App\Http\Controllers\Api\StateApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +18,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::prefix('city')->group(function () {
+    Route::get('/', [CityApiController::class, 'getCities']);
+});
+
+Route::prefix('state')->group(function () {
+    Route::get('/', [StateApiController::class, 'getStates']);
 });

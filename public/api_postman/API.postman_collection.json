@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "53c53356-050a-47a4-a576-48440910d400",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3521700",
+		"_collection_link": "https://gold-crescent-390582.postman.co/workspace/Falkor~b5f8fec0-5407-495f-96d3-3fa0d0525b44/collection/3521700-53c53356-050a-47a4-a576-48440910d400?action=share&creator=3521700&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Access-Control-Request-Method",
+								"value": "POST",
+								"type": "text"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "teste@teste.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "teste123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Access-Control-Request-Method",
+								"value": "POST",
+								"type": "text"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "teste@teste.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "teste123",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "André fontoura",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2Nzk1MTE3NTMsImV4cCI6MTY3OTUxNTM1MywibmJmIjoxNjc5NTExNzUzLCJqdGkiOiJ5VWQ1OTJmQ21XempSTDIxIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Nq_ud2qpAbp4A3ulMy82K9fmEDZFtZqiyt4jRVkF2fQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Access-Control-Request-Method",
+								"value": "POST",
+								"type": "text"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "*",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "teste@teste.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "teste123",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "André fontoura",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/auth/me",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Team",
+			"item": [
+				{
+					"name": "Create Team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvcmVnaXN0ZXIiLCJpYXQiOjE2ODEyNjkyNjIsImV4cCI6MTY4MTI3Mjg2MiwibmJmIjoxNjgxMjY5MjYyLCJqdGkiOiIxajd4akNISEFuZFlDUnRzIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5n1DVlbrVRpetR01GoEjfg-7k5YXD7seDm_djKNsdR8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "cityId",
+									"value": "56",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Teste de Time",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Descrição de teste",
+									"type": "text"
+								},
+								{
+									"key": "foundationDate",
+									"value": "2023-01-01",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/C:/Users/anddf/Pictures/LogoYoutube.png"
+								},
+								{
+									"key": "banner",
+									"type": "file",
+									"src": "/C:/Users/anddf/Pictures/64933dba-5c98-4abc-aa05-e15f7f88ff0e.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/team/save",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"team",
+								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "State",
+			"item": [
+				{
+					"name": "getState",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "City",
+			"item": [
+				{
+					"name": "getCity",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
