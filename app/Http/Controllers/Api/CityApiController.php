@@ -32,7 +32,12 @@ class CityApiController extends Controller
         ]);
 
 
-        $cities = City::select();
+        $cities = City::select(
+            'id',
+            'state_id',
+            'name',
+            'ibge_code'
+        );
 
         if (isset($filter['stateId']) && !$filter['stateId']) {
             $cities = $cities->where('state_id', $filter['stateId']);

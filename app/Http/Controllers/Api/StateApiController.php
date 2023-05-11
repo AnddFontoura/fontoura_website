@@ -28,7 +28,11 @@ class StateApiController extends Controller
             'stateShort'
         ]);
 
-        $states = State::select();
+        $states = State::select(
+            'id',
+            'name',
+            'short'
+        );
 
         if (isset($filter['stateId']) && !$filter['stateId']) {
             $states = $states->where('id', $filter['stateId']);
