@@ -31,7 +31,6 @@ class CityApiController extends Controller
             'cityPartialName'
         ]);
 
-
         $cities = City::select(
             'id',
             'state_id',
@@ -39,19 +38,19 @@ class CityApiController extends Controller
             'ibge_code'
         );
 
-        if (isset($filter['stateId']) && !$filter['stateId']) {
+        if (isset($filter['stateId']) && $filter['stateId']) {
             $cities = $cities->where('state_id', $filter['stateId']);
         }
 
-        if (isset($filter['cityId']) && !$filter['cityId']) {
+        if (isset($filter['cityId']) && $filter['cityId']) {
             $cities = $cities->where('id', $filter['cityId']);
         }
 
-        if (isset($filter['cityPartialName']) && !$filter['cityPartialName']) {
+        if (isset($filter['cityPartialName']) && $filter['cityPartialName']) {
             $cities = $cities->where('name', 'like', $filter['cityPartialName'] . '%');
         }
 
-        if (isset($filter['cityName']) && !$filter['cityName']) {
+        if (isset($filter['cityName']) && $filter['cityName']) {
             $cities = $cities->where('name', $filter['cityName']);
         }
 

@@ -34,15 +34,15 @@ class StateApiController extends Controller
             'short'
         );
 
-        if (isset($filter['stateId']) && !$filter['stateId']) {
+        if (isset($filter['stateId']) && $filter['stateId']) {
             $states = $states->where('id', $filter['stateId']);
         }
 
-        if (isset($filter['stateName']) && !$filter['stateName']) {
+        if (isset($filter['stateName']) && $filter['stateName']) {
             $states = $states->where('name', 'like', $filter['stateName'] . '%');
         }
 
-        if (isset($filter['stateShort']) && !$filter['stateShort']) {
+        if (isset($filter['stateShort']) && $filter['stateShort']) {
             $states = $states->where('short', $filter['stateShort']);
         }
 
